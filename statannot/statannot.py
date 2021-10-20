@@ -277,7 +277,7 @@ def add_stat_annotation(ax, plot='boxplot',
                         use_fixed_offset=False, line_offset_to_box=None,
                         line_offset=None, line_height=0.02, text_offset=1,
                         color='0.2', linewidth=1.5,
-                        fontsize='medium', verbose=1):
+                        fontsize='medium', verbose=1, left_offset=0):
     """
     Optionally computes statistical test between pairs of data series, and add statistical annotation on top
     of the boxes/bars. The same exact arguments `data`, `x`, `y`, `hue`, `order`, `width`,
@@ -314,7 +314,7 @@ def add_stat_annotation(ax, plot='boxplot',
 
         group_pos = box_plotter.group_names.index(cat)
         box_pos = group_pos + hue_offset
-        return box_pos
+        return box_pos + left_offset
 
     def get_box_data(box_plotter, boxName):
         """
